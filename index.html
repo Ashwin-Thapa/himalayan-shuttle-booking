@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Himalayan Shuttle - Book Your Ride</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚌</text></svg>">
+  <style>
+    .animate-fadeIn { 
+      animation: fadeIn 0.3s ease-out; 
+    }
+    @keyframes fadeIn { 
+      from { opacity: 0; transform: translateY(10px); } 
+      to { opacity: 1; transform: translateY(0); } 
+    }
+    html {
+      height: 100%; /* Ensure html element allows body to expand for 100vh */
+    }
+    body.himalayan-backdrop {
+      /* 
+        New Himalayan image with a more subtle gradient overlay.
+      */
+      background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('https://images.unsplash.com/photo-1540390769625-2fc3f8b1d50c?auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed; /* Creates a parallax-like effect */
+      background-repeat: no-repeat;
+      margin: 0; /* Remove default body margin */
+      min-height: 100vh; /* Ensure body covers full viewport height */
+      background-color: #e0e8f0 !important; /* Fallback color with !important */
+    }
+  </style>
+
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.4.0",
+    "vite": "https://esm.sh/vite@^7.0.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^4.6.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="himalayan-backdrop"> {/* Apply the new background class here */}
+  <div id="root"></div>
+  <div id="chat-widget-container"></div> <!-- Container for chat widget, though ChatWidget itself uses fixed positioning -->
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
